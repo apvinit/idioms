@@ -8,6 +8,6 @@
     <fragment
         android:id="@+id/idiomsListFragment"
         android:name="xyz.codingabc.idioms.IdiomsListFragment"
-        android:label="fragment_idioms_list"
+        android:label="Idioms and Phrases"
         tools:layout="@layout/fragment_idioms_list" />
 </navigation>

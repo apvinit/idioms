@@ -9,8 +9,8 @@ import xyz.codingabc.idioms.data.model.Idiom
 @Dao
 interface IdiomDao {
 
-    @Query("SELECT * FROM idiom")
-    fun getAll() : LiveData<List<Idiom>>
+    @Query("SELECT * FROM idioms")
+    fun getAll(): LiveData<List<Idiom>>
 
     @Insert
     fun insertData(idioms: List<Idiom>)

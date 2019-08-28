@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
     android:layout_marginEnd="16dp"
-    android:layout_marginBottom="8dp"
-    android:layout_marginTop="8dp">
+    android:layout_marginBottom="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,9 +16,11 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/idiom_text"
-            style="@style/TextAppearance.MaterialComponents.Headline4"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            app:fontFamily="@font/montserrat_bold"
             app:layout_constraintBottom_toTopOf="@id/idiom_meaning"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +32,8 @@
             style="@style/TextAppearance.MaterialComponents.Body1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            app:fontFamily="@font/montserrat"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

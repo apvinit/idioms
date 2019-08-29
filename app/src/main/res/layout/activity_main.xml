@@ -10,13 +10,15 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
+            app:layout_scrollFlags="scroll|enterAlways"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@android:color/background_light" />
+             />
     </com.google.android.material.appbar.AppBarLayout>
 
     <fragment

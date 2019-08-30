@@ -1,9 +1,8 @@
 package xyz.codingabc.idioms
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,10 +14,13 @@ import java.util.*
 
 class IdiomsListFragment : Fragment() {
 
+    private lateinit var idiomsListAdapter: IdiomsListAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_idioms_list, container, false)
     }
 
@@ -26,7 +28,8 @@ class IdiomsListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         idiomsList.layoutManager = LinearLayoutManager(activity)
         AppDatabase.getInstance(context!!).idiomDao().getAll().observe(this, Observer {
-            idiomsList.adapter = IdiomsListAdapter(it)
+            idiomsListAdapter = IdiomsListAdapter(it)
+            idiomsList.adapter = idiomsListAdapter
             setUpScrollView(it)
         })
     }
@@ -49,5 +52,19 @@ class IdiomsListFragment : Fragment() {
         scroller_thumb.setupWithFastScroller(scroller)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        val searchView = menu.findItem(R.id.action_search).actionView as SearchView
+        searchView.queryHint = "Search idioms"
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
 
+            override fun onQueryTextChange(newText: String?): Boolean {
+                idiomsListAdapter.filter.filter(newText)
+                return true
+            }
+        })
+    }
 }

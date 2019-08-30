@@ -6,11 +6,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>
 
-    <style name="ToolbarTitle">
-        <item name="android:fontFamily">@font/montserrat_bold</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="textAppearanceHeadline6">@font/montserrat_bold</item>
+
+        <!-- target android sdk versions < 26 and > 14 if theme other than AppCompat -->
+        <item name="fontFamily">@font/montserrat</item>
     </style>
 
 </resources>

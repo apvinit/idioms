@@ -1,4 +1,4 @@
-package xyz.codingabc.idioms
+package xyz.codingabc.idioms.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textview.MaterialTextView
+import xyz.codingabc.idioms.R
 import xyz.codingabc.idioms.data.model.Idiom
 
 class IdiomsListAdapter(private val idioms: List<Idiom>) :

@@ -1,4 +1,4 @@
-package xyz.codingabc.idioms
+package xyz.codingabc.idioms.fragments
 
 import android.os.Bundle
 import android.view.*
@@ -8,6 +8,8 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.reddit.indicatorfastscroll.FastScrollItemIndicator
 import kotlinx.android.synthetic.main.fragment_idioms_list.*
+import xyz.codingabc.idioms.R
+import xyz.codingabc.idioms.adapters.IdiomsListAdapter
 import xyz.codingabc.idioms.data.db.AppDatabase
 import xyz.codingabc.idioms.data.model.Idiom
 import java.util.*

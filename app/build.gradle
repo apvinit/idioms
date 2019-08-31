@@ -56,4 +56,5 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     implementation 'com.reddit:indicator-fast-scroll:1.1.0'
+    implementation 'com.google.android.gms:play-services-ads:18.2.0'
 }

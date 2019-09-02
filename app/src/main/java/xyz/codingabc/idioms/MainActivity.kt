@@ -1,6 +1,9 @@
 package xyz.codingabc.idioms
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +20,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
+    private  var nightMode = false
+    private lateinit var prefs: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +29,11 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.navHostFragment)
         toolbar.setupWithNavController(navController, null)
         setSupportActionBar(toolbar)
+
+        prefs = getSharedPreferences(PREF_FILE, Context.MODE_PRIVATE)
+        nightMode = prefs.getBoolean(NIGHT_MODE_KEY, false)
+
+        if (nightMode) AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
 
         MobileAds.initialize(this)
 
@@ -33,6 +43,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
+        val nightModeMenuItem = menu?.findItem(R.id.action_toggle_night)
+        nightModeMenuItem?.isChecked = nightMode
         return true
     }
 
@@ -40,18 +52,25 @@ class MainActivity : AppCompatActivity() {
         return when (item?.itemId) {
 
             R.id.action_toggle_night -> {
-                if (item.isChecked) {
-                    item.isChecked = false
+                val editor = prefs.edit()
+                if (nightMode) {
+                    editor.putBoolean(NIGHT_MODE_KEY, false)
                     AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
                 } else {
-                    item.isChecked = true
+                    editor.putBoolean(NIGHT_MODE_KEY, true)
                     AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
                 }
+                editor.apply()
                 true
             }
 
             else -> super.onOptionsItemSelected(item)
 
         }
+    }
+
+    companion object {
+        private const val NIGHT_MODE_KEY = "night_mode"
+        private const val PREF_FILE = "xyz.codingabc.idioms.sharedprefs"
     }
 }

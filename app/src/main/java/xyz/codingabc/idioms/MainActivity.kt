@@ -2,7 +2,11 @@ package xyz.codingabc.idioms
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -30,5 +34,24 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return when (item?.itemId) {
+
+            R.id.action_toggle_night -> {
+                if (item.isChecked) {
+                    item.isChecked = false
+                    AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
+                } else {
+                    item.isChecked = true
+                    AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
+                }
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+
+        }
     }
 }

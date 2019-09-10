@@ -55,6 +55,7 @@ class IdiomsListFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.search_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
         val searchView = menu.findItem(R.id.action_search).actionView as SearchView
         searchView.queryHint = "Search idioms"

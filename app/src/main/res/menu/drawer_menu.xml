@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/home_and_fav">
+        <item
+            android:id="@+id/destination_home"
+            android:title="@string/home" />
+
+        <item
+            android:id="@+id/destination_favourites"
+            android:title="@string/favourites" />
+    </group>
+
+    <group android:id="@+id/contents">
+
+        <item
+            android:id="@+id/destination_antonym"
+            android:title="@string/antonyms" />
+
+        <item
+            android:id="@+id/destination_synonym"
+            android:title="@string/synonyms" />
+
+        <item
+            android:id="@+id/destination_one_word_substitution"
+            android:title="@string/one_word_substitution" />
+
+        <item
+            android:id="@+id/destination_idioms_and_phrases"
+            android:title="@string/idioms_and_phrases" />
+
+        <item
+            android:id="@+id/destination_vocabulary"
+            android:title="@string/vocabulary" />
+
+        <item
+            android:id="@+id/destination_preposition"
+            android:title="@string/prepositions" />
+
+    </group>
+</menu>

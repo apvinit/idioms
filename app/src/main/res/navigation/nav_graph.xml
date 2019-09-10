@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/destination_home">
 
     <fragment
-        android:id="@+id/idiomsListFragment"
+        android:id="@+id/destination_idioms_and_phrases"
         android:name="xyz.codingabc.idioms.fragments.IdiomsListFragment"
         android:label="Idioms &amp; Phrases"
         tools:layout="@layout/fragment_idioms_list" />
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/destination_home"
         android:name="xyz.codingabc.idioms.fragments.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_idiomsListFragment"
-            app:destination="@id/idiomsListFragment" />
+            app:destination="@id/destination_idioms_and_phrases" />
     </fragment>
 </navigation>

@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textview.MaterialTextView
 import xyz.codingabc.idioms.R
 import xyz.codingabc.idioms.data.model.Idiom
+import java.util.*
 
+@Suppress("UNCHECKED_CAST")
 class IdiomsListAdapter(private val idioms: List<Idiom>) :
     RecyclerView.Adapter<IdiomsListAdapter.ViewHolder>(), Filterable {
 
@@ -31,7 +33,7 @@ class IdiomsListAdapter(private val idioms: List<Idiom>) :
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
-                val keyword = constraint.toString().toLowerCase()
+                val keyword = constraint.toString().toLowerCase(Locale.getDefault())
                 _idiomsFiltered = if (keyword.isEmpty()) idioms else {
                     val filteredList = mutableListOf<Idiom>()
                     for (idiom in idioms) {
@@ -61,11 +63,11 @@ class IdiomsListAdapter(private val idioms: List<Idiom>) :
             idiomText.text = idiom.text
             idiomMeaning.text = idiom.meaning
             val bundle = Bundle()
-            bundle.putString("id", idiom._id)
+            bundle.putInt("position", layoutPosition)
             view.setOnClickListener {
                 view.findNavController()
                     .navigate(
-                        R.id.action_destination_idioms_and_phrases_to_idiomDetailFragment,
+                        R.id.action_destination_idioms_and_phrases_to_idiomPager,
                         bundle
                     )
             }

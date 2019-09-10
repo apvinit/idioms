@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_destination_idioms_and_phrases_to_idiomDetailFragment"
             app:destination="@id/idiomDetailFragment" />
+        <action
+            android:id="@+id/action_destination_idioms_and_phrases_to_idiomPager"
+            app:destination="@id/idiomPager" />
     </fragment>
     <fragment
         android:id="@+id/destination_home"
@@ -27,4 +30,8 @@
         android:id="@+id/idiomDetailFragment"
         android:name="xyz.codingabc.idioms.fragments.IdiomDetailFragment"
         tools:layout="@layout/fragment_idiom_detail" />
+    <fragment
+        android:id="@+id/idiomPager"
+        android:name="xyz.codingabc.idioms.fragments.IdiomPager"
+        tools:layout="@layout/fragment_idiom_pager" />
 </navigation>

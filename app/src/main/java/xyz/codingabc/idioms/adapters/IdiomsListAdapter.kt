@@ -1,10 +1,12 @@
 package xyz.codingabc.idioms.adapters
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textview.MaterialTextView
 import xyz.codingabc.idioms.R
@@ -52,12 +54,21 @@ class IdiomsListAdapter(private val idioms: List<Idiom>) :
         }
     }
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         private val idiomText: MaterialTextView = view.findViewById(R.id.idiom_text)
         private val idiomMeaning: MaterialTextView = view.findViewById(R.id.idiom_meaning)
         fun bindIdiom(idiom: Idiom) {
             idiomText.text = idiom.text
             idiomMeaning.text = idiom.meaning
+            val bundle = Bundle()
+            bundle.putString("id", idiom._id)
+            view.setOnClickListener {
+                view.findNavController()
+                    .navigate(
+                        R.id.action_destination_idioms_and_phrases_to_idiomDetailFragment,
+                        bundle
+                    )
+            }
         }
     }
 }

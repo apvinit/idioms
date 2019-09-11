@@ -5,13 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
-        <item name="colorAccent">@color/secondaryDarkColor</item>
-        <item name="colorOnPrimary">@color/primaryTextColor</item>
-
-        <item name="android:fontFamily">@font/montserrat</item>
-
-        <!-- target android sdk versions < 26 and > 14 if theme other than AppCompat -->
-        <item name="fontFamily">@font/montserrat</item>
+        <item name="colorAccent">@color/secondaryColor</item>
     </style>
 
     <style name="AppTheme.Splash">

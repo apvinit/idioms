@@ -6,9 +6,9 @@
             android:id="@+id/destination_home"
             android:title="@string/home" />
 
-        <item
+        <!--<item
             android:id="@+id/destination_favourites"
-            android:title="@string/favourites" />
+            android:title="@string/favourites" />-->
     </group>
 
     <group android:id="@+id/contents">
@@ -37,5 +37,10 @@
             android:id="@+id/destination_preposition"
             android:title="@string/prepositions" />
 
+    </group>
+
+    <group android:id="@+id/extra_menu_items">
+        <item android:id="@+id/destination_settings"
+            android:title="@string/settings" />
     </group>
 </menu>

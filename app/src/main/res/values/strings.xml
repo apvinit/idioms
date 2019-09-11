@@ -10,4 +10,6 @@
     <string name="prepositions">Prepositions</string>
     <string name="home">Home</string>
     <string name="favourites">Favourites</string>
+    <string name="meaning">Meaning</string>
+    <string name="settings">Settings</string>
 </resources>

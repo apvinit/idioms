@@ -25,10 +25,19 @@ class IdiomPager : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val position = arguments?.getInt("position")!!
-        AppDatabase.getInstance(context!!).idiomDao().getAll().observe(this, Observer {
-            idiom_pager.adapter = IdiomPagerAdapter(childFragmentManager, it)
-            idiom_pager.currentItem = position
-        })
+        val keyword = arguments?.getString("keyword") ?: ""
+
+        if (keyword.isNotEmpty()) {
+            AppDatabase.getInstance(context!!).idiomDao().getBySearch("%$keyword%").observe(this, Observer {
+                idiom_pager.adapter = IdiomPagerAdapter(childFragmentManager, it)
+                idiom_pager.currentItem = position
+            })
+        } else {
+            AppDatabase.getInstance(context!!).idiomDao().getAll().observe(this, Observer {
+                idiom_pager.adapter = IdiomPagerAdapter(childFragmentManager, it)
+                idiom_pager.currentItem = position
+            })
+        }
 
     }
 }

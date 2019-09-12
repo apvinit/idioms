@@ -34,4 +34,8 @@
         android:id="@+id/idiomPager"
         android:name="xyz.codingabc.idioms.fragments.IdiomPager"
         tools:layout="@layout/fragment_idiom_pager" />
+    <fragment
+        android:id="@+id/destination_settings"
+        android:name="xyz.codingabc.idioms.fragments.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

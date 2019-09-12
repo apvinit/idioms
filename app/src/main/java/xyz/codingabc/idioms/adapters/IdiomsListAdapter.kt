@@ -65,7 +65,7 @@ class IdiomsListAdapter(private val idioms: List<Idiom>) :
             val bundle = Bundle()
             bundle.putInt("position", layoutPosition)
             view.setOnClickListener {
-                view.findNavController()
+                it.findNavController()
                     .navigate(
                         R.id.action_destination_idioms_and_phrases_to_idiomPager,
                         bundle

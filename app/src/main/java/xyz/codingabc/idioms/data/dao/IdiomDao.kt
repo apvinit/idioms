@@ -15,7 +15,7 @@ interface IdiomDao {
     @Query("SELECT * FROM idioms WHERE _id LIKE :id")
     fun getById(id: String): LiveData<Idiom>
 
-    @Query("SELECT * FROM idioms WHERE idiom LIKE  :keyword")
+    @Query("SELECT * FROM idioms WHERE idiom LIKE  :keyword or meaning LIKE :keyword")
     fun getBySearch(keyword: String) : LiveData<List<Idiom>>
 
     @Insert

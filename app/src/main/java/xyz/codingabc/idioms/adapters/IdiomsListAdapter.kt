@@ -20,6 +20,8 @@ class IdiomsListAdapter(private val idioms: List<Idiom>) :
 
     private var _idiomsFiltered: List<Idiom> = idioms
 
+    private var searchKeyword = ""
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_idiom, parent, false)
         return ViewHolder(view)
@@ -35,6 +37,7 @@ class IdiomsListAdapter(private val idioms: List<Idiom>) :
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
                 val keyword = constraint.toString().toLowerCase(Locale.getDefault())
+                searchKeyword = keyword
                 _idiomsFiltered = if (keyword.isEmpty()) idioms else {
                     val filteredList = mutableListOf<Idiom>()
                     for (idiom in idioms) {
@@ -57,7 +60,7 @@ class IdiomsListAdapter(private val idioms: List<Idiom>) :
         }
     }
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val idiomText: MaterialTextView = view.findViewById(R.id.idiom_text)
         private val idiomMeaning: MaterialTextView = view.findViewById(R.id.idiom_meaning)
 
@@ -65,6 +68,7 @@ class IdiomsListAdapter(private val idioms: List<Idiom>) :
             view.findViewById<ConstraintLayout>(R.id.idiom_container).setOnClickListener {
                 val bundle = Bundle()
                 bundle.putInt("position", layoutPosition)
+                bundle.putString("keyword", searchKeyword)
                 it.findNavController()
                     .navigate(
                         R.id.action_destination_idioms_and_phrases_to_idiomPager,

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textview.MaterialTextView
@@ -56,21 +57,25 @@ class IdiomsListAdapter(private val idioms: List<Idiom>) :
         }
     }
 
-    class ViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val idiomText: MaterialTextView = view.findViewById(R.id.idiom_text)
         private val idiomMeaning: MaterialTextView = view.findViewById(R.id.idiom_meaning)
-        fun bindIdiom(idiom: Idiom) {
-            idiomText.text = idiom.text
-            idiomMeaning.text = idiom.meaning
-            val bundle = Bundle()
-            bundle.putInt("position", layoutPosition)
-            view.setOnClickListener {
+
+        init {
+            view.findViewById<ConstraintLayout>(R.id.idiom_container).setOnClickListener {
+                val bundle = Bundle()
+                bundle.putInt("position", layoutPosition)
                 it.findNavController()
                     .navigate(
                         R.id.action_destination_idioms_and_phrases_to_idiomPager,
                         bundle
                     )
             }
+        }
+
+        fun bindIdiom(idiom: Idiom) {
+            idiomText.text = idiom.text
+            idiomMeaning.text = idiom.meaning
         }
     }
 }

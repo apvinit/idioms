@@ -37,5 +37,5 @@
     <fragment
         android:id="@+id/destination_settings"
         android:name="xyz.codingabc.idioms.fragments.SettingsFragment"
-        android:label="SettingsFragment" />
+        android:label="@string/search" />
 </navigation>

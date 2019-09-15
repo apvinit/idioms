@@ -16,6 +16,7 @@
             android:layout_width="0dp"
             android:layout_height="250dp"
             android:gravity="center"
+            android:padding="16dp"
             android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@id/txt_meaning"
             app:layout_constraintEnd_toEndOf="parent"
@@ -25,27 +26,32 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/txt_meaning"
-            style="@style/TextAppearance.MaterialComponents.Headline6"
+            style="@style/TextAppearance.MaterialComponents.Overline"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:text="@string/meaning"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/word_meaning"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/word" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/word_meaning"
-            android:padding="16dp"
             style="@style/TextAppearance.MaterialComponents.Body1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txt_meaning"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:text="meaning of the content shown above. Yes the meaning of the content above"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_meaning"
+            tools:text="meaning of the content shown above. Yes the meaning of the content above" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

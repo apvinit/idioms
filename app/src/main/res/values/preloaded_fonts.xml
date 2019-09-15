@@ -3,7 +3,12 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/libre_franklin</item>
         <item>@font/libre_franklin_bold</item>
+        <item>@font/libre_franklin_light</item>
+        <item>@font/libre_franklin_medium</item>
+        <item>@font/merriweather</item>
         <item>@font/merriweather_black_italic</item>
-        <item>@font/montserrat</item>
+        <item>@font/merriweather_bold_italic</item>
+        <item>@font/merriweather_italic</item>
+        <item>@font/merriweather_bold</item>
     </array>
 </resources>

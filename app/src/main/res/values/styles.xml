@@ -14,8 +14,9 @@
         <item name="android:windowBackground">@drawable/splash_background</item>
     </style>
 
-    <style name="TextAppearance.AppTheme.HomeItems" parent="TextAppearance.MaterialComponents.Headline4">
-        <item name="android:textSize">28sp</item>
+    <style name="TextAppearance.AppTheme.HomeItems" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">@font/libre_franklin</item>
     </style>
 
 </resources>

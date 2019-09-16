@@ -12,7 +12,7 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/word"
-            style="@style/TextAppearance.MaterialComponents.Headline3"
+            android:textAppearance="?textAppearanceHeadline3"
             android:layout_width="0dp"
             android:layout_height="250dp"
             android:gravity="center"
@@ -26,7 +26,7 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/txt_meaning"
-            style="@style/TextAppearance.MaterialComponents.Overline"
+            android:textAppearance="?textAppearanceOverline"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
@@ -39,7 +39,7 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/word_meaning"
-            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:textAppearance="?textAppearanceBody1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"

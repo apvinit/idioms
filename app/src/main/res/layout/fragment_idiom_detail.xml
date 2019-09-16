@@ -15,6 +15,7 @@
             android:textAppearance="?textAppearanceHeadline3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:minHeight="180dp"
             android:gravity="center"
             android:padding="16dp"
             android:textAlignment="center"

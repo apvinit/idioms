@@ -12,13 +12,13 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/word"
-            android:textAppearance="?textAppearanceHeadline3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:minHeight="180dp"
             android:gravity="center"
+            android:minHeight="180dp"
             android:padding="16dp"
             android:textAlignment="center"
+            android:textAppearance="?textAppearanceHeadline3"
             app:layout_constraintBottom_toTopOf="@id/txt_meaning"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,12 +27,12 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/txt_meaning"
-            android:textAppearance="?textAppearanceOverline"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:text="@string/meaning"
+            android:textAppearance="?textAppearanceOverline"
             app:layout_constraintBottom_toTopOf="@id/word_meaning"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,13 +40,13 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/word_meaning"
-            android:textAppearance="?textAppearanceBody1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
             android:paddingTop="8dp"
             android:paddingEnd="16dp"
             android:paddingBottom="8dp"
+            android:textAppearance="?textAppearanceBody1"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -41,7 +41,7 @@ class IdiomsListAdapter(private val idioms: List<Idiom>) :
                 _idiomsFiltered = if (keyword.isEmpty()) idioms else {
                     val filteredList = mutableListOf<Idiom>()
                     for (idiom in idioms) {
-                        if (idiom.text.contains(keyword) || idiom.meaning.contains(keyword)) {
+                        if (idiom.text.contains(keyword)) {
                             filteredList.add(idiom)
                         }
                     }

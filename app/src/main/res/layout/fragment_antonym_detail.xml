@@ -12,7 +12,7 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/word"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:minHeight="180dp"
@@ -23,7 +23,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="awesome"/>
+            tools:text="awesome" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/txt_meaning"
@@ -59,6 +59,7 @@
             android:id="@+id/txt_antonym"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:text="@string/antonyms"
@@ -74,11 +75,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
-            android:paddingTop="8dp"
             android:paddingEnd="16dp"
             android:paddingBottom="8dp"
-            android:textSize="24sp"
             android:textAppearance="?textAppearanceHeadline6"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

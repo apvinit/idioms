@@ -9,5 +9,5 @@ data class Synonym(
     @PrimaryKey val _id: String,
     @ColumnInfo(name = "word") val word: String,
     @ColumnInfo(name = "meaning") val meaning: String,
-    @ColumnInfo(name = "synonym") val antonym: String
+    @ColumnInfo(name = "synonym") val synonym: String
 )

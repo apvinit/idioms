@@ -1,10 +1,13 @@
 package xyz.codingabc.idioms.synonyms
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textview.MaterialTextView
 import xyz.codingabc.idioms.R
@@ -58,6 +61,19 @@ class SynonymListAdapter(private val synonyms : List<Synonym>) :
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         private val synonymWord = view.findViewById<MaterialTextView>(R.id.synonym_word)
+
+        init {
+            view.findViewById<ConstraintLayout>(R.id.synonym_container).setOnClickListener {
+                val bundle = Bundle()
+                bundle.putInt("position", layoutPosition)
+                bundle.putString("keyword", searchKeyword)
+                it.findNavController()
+                    .navigate(
+                        R.id.action_destination_synonym_to_synonymPager,
+                        bundle
+                    )
+            }
+        }
 
         fun bindSynonym(synonym: Synonym) {
             synonymWord.text = synonym.word

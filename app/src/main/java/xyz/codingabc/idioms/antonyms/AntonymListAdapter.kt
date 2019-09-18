@@ -1,10 +1,13 @@
 package xyz.codingabc.idioms.antonyms
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textview.MaterialTextView
 import xyz.codingabc.idioms.R
@@ -58,6 +61,19 @@ class AntonymListAdapter(private val antonyms: List<Antonym>) :
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         private val antonymWord = view.findViewById<MaterialTextView>(R.id.antonym_word)
+
+        init {
+            view.findViewById<ConstraintLayout>(R.id.antonym_container).setOnClickListener {
+                val bundle = Bundle()
+                bundle.putInt("position", layoutPosition)
+                bundle.putString("keyword", searchKeyword)
+                it.findNavController()
+                    .navigate(
+                        R.id.action_destination_antonym_to_antonymPager,
+                        bundle
+                    )
+            }
+        }
 
         fun bindAntonym(antonym: Antonym) {
             antonymWord.text = antonym.word

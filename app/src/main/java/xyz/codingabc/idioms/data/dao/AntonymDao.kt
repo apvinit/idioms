@@ -11,7 +11,7 @@ interface AntonymDao {
     @Query("SELECT * FROM antonyms ORDER BY  word")
     fun getAll(): LiveData<List<Antonym>>
 
-    @Query("SELECT * FROM antonyms WHERE antonym LIKE :keyword ORDER BY word")
+    @Query("SELECT * FROM antonyms WHERE word LIKE :keyword ORDER BY word")
     fun getBySearch(keyword: String): LiveData<List<Antonym>>
 
 }

@@ -9,7 +9,7 @@
         android:id="@+id/destination_idioms_and_phrases"
         android:name="xyz.codingabc.idioms.fragments.IdiomsListFragment"
         android:label="Idioms &amp; Phrases"
-        tools:layout="@layout/fragment_idioms_list" >
+        tools:layout="@layout/fragment_idioms_list">
         <action
             android:id="@+id/action_destination_idioms_and_phrases_to_idiomPager"
             app:destination="@id/idiomPager" />
@@ -18,10 +18,13 @@
         android:id="@+id/destination_home"
         android:name="xyz.codingabc.idioms.fragments.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_idiomsListFragment"
             app:destination="@id/destination_idioms_and_phrases" />
+        <action
+            android:id="@+id/action_destination_home_to_destination_antonym"
+            app:destination="@id/destination_antonym" />
     </fragment>
     <fragment
         android:id="@+id/idiomPager"
@@ -35,5 +38,13 @@
         android:id="@+id/destination_antonym"
         android:name="xyz.codingabc.idioms.antonyms.AntonymsListFragment"
         android:label="@string/antonyms"
-        tools:layout="@layout/fragment_antonyms_list" />
+        tools:layout="@layout/fragment_antonyms_list">
+        <action
+            android:id="@+id/action_destination_antonym_to_antonymPager"
+            app:destination="@id/antonymPager" />
+    </fragment>
+    <fragment
+        android:id="@+id/antonymPager"
+        android:name="xyz.codingabc.idioms.antonyms.AntonymPager"
+        tools:layout="@layout/fragment_antonym_pager" />
 </navigation>

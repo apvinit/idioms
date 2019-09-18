@@ -1,4 +1,4 @@
-package xyz.codingabc.idioms.fragments
+package xyz.codingabc.idioms.idiomsandphrases
 
 
 import android.os.Bundle

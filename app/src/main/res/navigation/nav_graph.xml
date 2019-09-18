@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/destination_idioms_and_phrases"
-        android:name="xyz.codingabc.idioms.fragments.IdiomsListFragment"
+        android:name="xyz.codingabc.idioms.idiomsandphrases.IdiomsListFragment"
         android:label="Idioms &amp; Phrases"
         tools:layout="@layout/fragment_idioms_list">
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/idiomPager"
-        android:name="xyz.codingabc.idioms.fragments.IdiomPager"
+        android:name="xyz.codingabc.idioms.idiomsandphrases.IdiomPager"
         tools:layout="@layout/fragment_idiom_pager" />
     <fragment
         android:id="@+id/destination_settings"

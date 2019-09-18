@@ -1,4 +1,4 @@
-package xyz.codingabc.idioms.fragments
+package xyz.codingabc.idioms.idiomsandphrases
 
 
 import android.os.Bundle
@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_idiom_pager.*
 import xyz.codingabc.idioms.R
-import xyz.codingabc.idioms.adapters.IdiomPagerAdapter
 import xyz.codingabc.idioms.data.db.AppDatabase
 
 class IdiomPager : Fragment() {
@@ -29,12 +28,18 @@ class IdiomPager : Fragment() {
 
         if (keyword.isNotEmpty()) {
             AppDatabase.getInstance(context!!).idiomDao().getBySearch("%$keyword%").observe(this, Observer {
-                idiom_pager.adapter = IdiomPagerAdapter(childFragmentManager, it)
+                idiom_pager.adapter = IdiomPagerAdapter(
+                    childFragmentManager,
+                    it
+                )
                 idiom_pager.currentItem = position
             })
         } else {
             AppDatabase.getInstance(context!!).idiomDao().getAll().observe(this, Observer {
-                idiom_pager.adapter = IdiomPagerAdapter(childFragmentManager, it)
+                idiom_pager.adapter = IdiomPagerAdapter(
+                    childFragmentManager,
+                    it
+                )
                 idiom_pager.currentItem = position
             })
         }

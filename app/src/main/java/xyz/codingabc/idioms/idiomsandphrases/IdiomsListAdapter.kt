@@ -1,4 +1,4 @@
-package xyz.codingabc.idioms.adapters
+package xyz.codingabc.idioms.idiomsandphrases
 
 import android.os.Bundle
 import android.view.LayoutInflater

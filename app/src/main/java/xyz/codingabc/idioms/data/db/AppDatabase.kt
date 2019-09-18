@@ -9,6 +9,7 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import xyz.codingabc.idioms.data.dao.AntonymDao
 import xyz.codingabc.idioms.data.dao.IdiomDao
+import xyz.codingabc.idioms.data.dao.SynonymDao
 import xyz.codingabc.idioms.data.model.*
 import java.io.FileOutputStream
 import java.io.IOException
@@ -21,6 +22,7 @@ import java.io.IOException
 abstract class AppDatabase : RoomDatabase() {
     abstract fun idiomDao(): IdiomDao
     abstract fun antonymDao(): AntonymDao
+    abstract fun synonymDao(): SynonymDao
 
     companion object {
 
@@ -51,6 +53,7 @@ abstract class AppDatabase : RoomDatabase() {
             }).build()
         }
 
+        @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
         private fun copyAttachedDatabase(context: Context) {
             val dbPath = context.getDatabasePath(DATABASE_NAME)
 

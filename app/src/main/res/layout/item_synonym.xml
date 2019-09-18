@@ -10,9 +10,10 @@
     android:layout_marginBottom="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/antonym_container"
+        android:id="@+id/synonym_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/synonym_word"

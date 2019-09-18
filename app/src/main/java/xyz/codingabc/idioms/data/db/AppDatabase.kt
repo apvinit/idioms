@@ -7,6 +7,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import xyz.codingabc.idioms.data.dao.AntonymDao
 import xyz.codingabc.idioms.data.dao.IdiomDao
 import xyz.codingabc.idioms.data.model.*
 import java.io.FileOutputStream
@@ -19,6 +20,7 @@ import java.io.IOException
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun idiomDao(): IdiomDao
+    abstract fun antonymDao(): AntonymDao
 
     companion object {
 

@@ -24,6 +24,10 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        antonym_card.setOnClickListener {
+            findNavController().navigate(R.id.action_destination_home_to_destination_antonym)
+        }
+
         idioms_and_phrases_card.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_idiomsListFragment)
         }

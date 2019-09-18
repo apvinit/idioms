@@ -11,9 +11,6 @@
         android:label="Idioms &amp; Phrases"
         tools:layout="@layout/fragment_idioms_list" >
         <action
-            android:id="@+id/action_destination_idioms_and_phrases_to_idiomDetailFragment"
-            app:destination="@id/idiomDetailFragment" />
-        <action
             android:id="@+id/action_destination_idioms_and_phrases_to_idiomPager"
             app:destination="@id/idiomPager" />
     </fragment>
@@ -27,10 +24,6 @@
             app:destination="@id/destination_idioms_and_phrases" />
     </fragment>
     <fragment
-        android:id="@+id/idiomDetailFragment"
-        android:name="xyz.codingabc.idioms.fragments.IdiomDetailFragment"
-        tools:layout="@layout/fragment_idiom_detail" />
-    <fragment
         android:id="@+id/idiomPager"
         android:name="xyz.codingabc.idioms.fragments.IdiomPager"
         tools:layout="@layout/fragment_idiom_pager" />
@@ -38,4 +31,9 @@
         android:id="@+id/destination_settings"
         android:name="xyz.codingabc.idioms.fragments.SettingsFragment"
         android:label="@string/search" />
+    <fragment
+        android:id="@+id/destination_antonym"
+        android:name="xyz.codingabc.idioms.antonyms.AntonymsListFragment"
+        android:label="@string/antonyms"
+        tools:layout="@layout/fragment_antonyms_list" />
 </navigation>

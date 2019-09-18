@@ -54,5 +54,13 @@
         android:id="@+id/destination_synonym"
         android:name="xyz.codingabc.idioms.synonyms.SynonymListFragment"
         android:label="@string/synonyms"
-        tools:layout="@layout/fragment_synonym_list" />
+        tools:layout="@layout/fragment_synonym_list" >
+        <action
+            android:id="@+id/action_destination_synonym_to_synonymPager"
+            app:destination="@id/synonymPager" />
+    </fragment>
+    <fragment
+        android:id="@+id/synonymPager"
+        android:name="xyz.codingabc.idioms.synonyms.SynonymPager"
+        tools:layout="@layout/fragment_synonym_pager" />
 </navigation>

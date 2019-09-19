@@ -39,5 +39,8 @@ class HomeFragment : Fragment() {
         idioms_and_phrases_card.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_idiomsListFragment)
         }
+        preposition_card.setOnClickListener {
+            findNavController().navigate(R.id.action_destination_home_to_destination_preposition)
+        }
     }
 }

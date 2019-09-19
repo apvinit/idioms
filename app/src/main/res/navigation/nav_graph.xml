@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_destination_home_to_destination_one_word_substitution"
             app:destination="@id/destination_one_word_substitution" />
+        <action
+            android:id="@+id/action_destination_home_to_destination_preposition"
+            app:destination="@id/destination_preposition" />
     </fragment>
     <fragment
         android:id="@+id/idiomPager"
@@ -79,4 +82,9 @@
         android:id="@+id/oneWordSubsPager"
         android:name="xyz.codingabc.idioms.onewordsubstitutions.OneWordSubsPager"
         tools:layout="@layout/fragment_one_word_subs_pager" />
+    <fragment
+        android:id="@+id/destination_preposition"
+        android:name="xyz.codingabc.idioms.prepositions.PrepositionListFragment"
+        android:label="@string/prepositions"
+        tools:layout="@layout/fragment_preposition_list" />
 </navigation>

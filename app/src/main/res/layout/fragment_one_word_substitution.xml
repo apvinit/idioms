@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".onewordsubstitutions.OneWordSubstitutionFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/owsList"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ows_scroller"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="20"
+        tools:listitem="@layout/item_idiom" />
+
+    <com.reddit.indicatorfastscroll.FastScrollerView
+        android:id="@+id/ows_scroller"
+        android:layout_width="32dp"
+        android:layout_height="match_parent"
+        android:textAppearance="?textAppearanceOverline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/owsList"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.reddit.indicatorfastscroll.FastScrollerThumbView
+        android:id="@+id/ows_scroller_thumb"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@id/ows_scroller"
+        android:layout_alignBottom="@id/ows_scroller"
+        android:layout_marginEnd="4dp"
+        android:layout_toStartOf="@id/ows_scroller"
+        android:textAppearance="?textAppearanceCaption"
+        android:textColor="@color/color_on_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ows_scroller"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

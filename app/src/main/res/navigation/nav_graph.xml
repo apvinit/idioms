@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_destination_home_to_destination_synonym"
             app:destination="@id/destination_synonym" />
+        <action
+            android:id="@+id/action_destination_home_to_destination_one_word_substitution"
+            app:destination="@id/destination_one_word_substitution" />
     </fragment>
     <fragment
         android:id="@+id/idiomPager"
@@ -63,4 +66,9 @@
         android:id="@+id/synonymPager"
         android:name="xyz.codingabc.idioms.synonyms.SynonymPager"
         tools:layout="@layout/fragment_synonym_pager" />
+    <fragment
+        android:id="@+id/destination_one_word_substitution"
+        android:name="xyz.codingabc.idioms.onewordsubstitutions.OneWordSubstitutionFragment"
+        android:label="One Word Substitution"
+        tools:layout="@layout/fragment_one_word_substitution" />
 </navigation>

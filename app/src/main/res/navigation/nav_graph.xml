@@ -86,5 +86,13 @@
         android:id="@+id/destination_preposition"
         android:name="xyz.codingabc.idioms.prepositions.PrepositionListFragment"
         android:label="@string/prepositions"
-        tools:layout="@layout/fragment_preposition_list" />
+        tools:layout="@layout/fragment_preposition_list" >
+        <action
+            android:id="@+id/action_destination_preposition_to_prepositionPager"
+            app:destination="@id/prepositionPager" />
+    </fragment>
+    <fragment
+        android:id="@+id/prepositionPager"
+        android:name="xyz.codingabc.idioms.prepositions.PrepositionPager"
+        tools:layout="@layout/fragment_preposition_pager" />
 </navigation>

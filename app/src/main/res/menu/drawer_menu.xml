@@ -29,9 +29,9 @@
             android:id="@+id/destination_idioms_and_phrases"
             android:title="@string/idioms_and_phrases" />
 
-        <item
+        <!--<item
             android:id="@+id/destination_vocabulary"
-            android:title="@string/vocabulary" />
+            android:title="@string/vocabulary" />-->
 
         <item
             android:id="@+id/destination_preposition"

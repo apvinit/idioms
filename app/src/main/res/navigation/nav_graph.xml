@@ -70,5 +70,13 @@
         android:id="@+id/destination_one_word_substitution"
         android:name="xyz.codingabc.idioms.onewordsubstitutions.OneWordSubstitutionFragment"
         android:label="One Word Substitution"
-        tools:layout="@layout/fragment_one_word_substitution" />
+        tools:layout="@layout/fragment_one_word_substitution" >
+        <action
+            android:id="@+id/action_destination_one_word_substitution_to_oneWordSubsPager"
+            app:destination="@id/oneWordSubsPager" />
+    </fragment>
+    <fragment
+        android:id="@+id/oneWordSubsPager"
+        android:name="xyz.codingabc.idioms.onewordsubstitutions.OneWordSubsPager"
+        tools:layout="@layout/fragment_one_word_subs_pager" />
 </navigation>

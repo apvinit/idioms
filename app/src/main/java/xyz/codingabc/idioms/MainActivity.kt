@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         MobileAds.initialize(this)
 
         val adRequest =
-            AdRequest.Builder().addTestDevice("BC8E628EEE8616E4D117EA3A610DD0C6").build()
+            AdRequest.Builder().addTestDevice("22E10D2A006788D93EA72F3704DB1284").build()
         adView.loadAd(adRequest)
     }
 

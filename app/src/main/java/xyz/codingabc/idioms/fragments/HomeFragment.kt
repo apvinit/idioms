@@ -32,6 +32,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_destination_home_to_destination_synonym)
         }
 
+        one_word_substitution_card.setOnClickListener {
+            findNavController().navigate(R.id.action_destination_home_to_destination_one_word_substitution)
+        }
+
         idioms_and_phrases_card.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_idiomsListFragment)
         }

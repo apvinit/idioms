@@ -7,7 +7,7 @@ import androidx.preference.PreferenceManager
 
 class App : Application() {
     private var nightMode = false
-    private lateinit var prefs: SharedPreferences
+    lateinit var prefs: SharedPreferences
 
     override fun onCreate() {
         super.onCreate()

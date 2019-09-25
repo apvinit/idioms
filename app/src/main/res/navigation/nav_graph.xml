@@ -3,11 +3,96 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/idiomsListFragment">
+    app:startDestination="@id/destination_home">
 
     <fragment
-        android:id="@+id/idiomsListFragment"
-        android:name="xyz.codingabc.idioms.fragments.IdiomsListFragment"
-        android:label="Idioms and Phrases"
-        tools:layout="@layout/fragment_idioms_list" />
+        android:id="@+id/destination_idioms_and_phrases"
+        android:name="xyz.codingabc.idioms.idiomsandphrases.IdiomsListFragment"
+        android:label="Idioms &amp; Phrases"
+        tools:layout="@layout/fragment_idioms_list">
+        <action
+            android:id="@+id/action_destination_idioms_and_phrases_to_idiomPager"
+            app:destination="@id/idiomPager" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination_home"
+        android:name="xyz.codingabc.idioms.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_idiomsListFragment"
+            app:destination="@id/destination_idioms_and_phrases" />
+        <action
+            android:id="@+id/action_destination_home_to_destination_antonym"
+            app:destination="@id/destination_antonym" />
+        <action
+            android:id="@+id/action_destination_home_to_destination_synonym"
+            app:destination="@id/destination_synonym" />
+        <action
+            android:id="@+id/action_destination_home_to_destination_one_word_substitution"
+            app:destination="@id/destination_one_word_substitution" />
+        <action
+            android:id="@+id/action_destination_home_to_destination_preposition"
+            app:destination="@id/destination_preposition" />
+    </fragment>
+    <fragment
+        android:id="@+id/idiomPager"
+        android:name="xyz.codingabc.idioms.idiomsandphrases.IdiomPager"
+        tools:layout="@layout/fragment_idiom_pager" />
+    <fragment
+        android:id="@+id/destination_settings"
+        android:name="xyz.codingabc.idioms.fragments.SettingsFragment"
+        android:label="@string/search" />
+    <fragment
+        android:id="@+id/destination_antonym"
+        android:name="xyz.codingabc.idioms.antonyms.AntonymsListFragment"
+        android:label="@string/antonyms"
+        tools:layout="@layout/fragment_antonyms_list">
+        <action
+            android:id="@+id/action_destination_antonym_to_antonymPager"
+            app:destination="@id/antonymPager" />
+    </fragment>
+    <fragment
+        android:id="@+id/antonymPager"
+        android:name="xyz.codingabc.idioms.antonyms.AntonymPager"
+        tools:layout="@layout/fragment_antonym_pager" />
+    <fragment
+        android:id="@+id/destination_synonym"
+        android:name="xyz.codingabc.idioms.synonyms.SynonymListFragment"
+        android:label="@string/synonyms"
+        tools:layout="@layout/fragment_synonym_list" >
+        <action
+            android:id="@+id/action_destination_synonym_to_synonymPager"
+            app:destination="@id/synonymPager" />
+    </fragment>
+    <fragment
+        android:id="@+id/synonymPager"
+        android:name="xyz.codingabc.idioms.synonyms.SynonymPager"
+        tools:layout="@layout/fragment_synonym_pager" />
+    <fragment
+        android:id="@+id/destination_one_word_substitution"
+        android:name="xyz.codingabc.idioms.onewordsubstitutions.OneWordSubstitutionFragment"
+        android:label="One Word Substitution"
+        tools:layout="@layout/fragment_one_word_substitution" >
+        <action
+            android:id="@+id/action_destination_one_word_substitution_to_oneWordSubsPager"
+            app:destination="@id/oneWordSubsPager" />
+    </fragment>
+    <fragment
+        android:id="@+id/oneWordSubsPager"
+        android:name="xyz.codingabc.idioms.onewordsubstitutions.OneWordSubsPager"
+        tools:layout="@layout/fragment_one_word_subs_pager" />
+    <fragment
+        android:id="@+id/destination_preposition"
+        android:name="xyz.codingabc.idioms.prepositions.PrepositionListFragment"
+        android:label="@string/prepositions"
+        tools:layout="@layout/fragment_preposition_list" >
+        <action
+            android:id="@+id/action_destination_preposition_to_prepositionPager"
+            app:destination="@id/prepositionPager" />
+    </fragment>
+    <fragment
+        android:id="@+id/prepositionPager"
+        android:name="xyz.codingabc.idioms.prepositions.PrepositionPager"
+        tools:layout="@layout/fragment_preposition_pager" />
 </navigation>

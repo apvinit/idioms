@@ -7,18 +7,26 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import xyz.codingabc.idioms.data.dao.IdiomDao
-import xyz.codingabc.idioms.data.model.Idiom
+import xyz.codingabc.idioms.data.dao.*
+import xyz.codingabc.idioms.data.model.*
 import java.io.FileOutputStream
 import java.io.IOException
 
-@Database(entities = [Idiom::class], version = 2, exportSchema = false)
+@Database(
+    entities = [Antonym::class, Synonym::class, OneWordSubstitution::class, Idiom::class, Preposition::class],
+    version = 2,
+    exportSchema = false
+)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun idiomDao(): IdiomDao
+    abstract fun antonymDao(): AntonymDao
+    abstract fun synonymDao(): SynonymDao
+    abstract fun oneWordSubstitutionDao(): OneWordSubstitutionDao
+    abstract fun prepositionDao(): PrepositionDao
 
     companion object {
 
-        private const val DATABASE_NAME = "idioms.db"
+        private const val DATABASE_NAME = "app.db"
 
         @Volatile
         private var INSTANCE: AppDatabase? = null
@@ -45,6 +53,7 @@ abstract class AppDatabase : RoomDatabase() {
             }).build()
         }
 
+        @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
         private fun copyAttachedDatabase(context: Context) {
             val dbPath = context.getDatabasePath(DATABASE_NAME)
 

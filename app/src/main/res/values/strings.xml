@@ -1,5 +1,18 @@
 <resources>
-    <string name="app_name">SSC Idioms &amp; Phrases</string>
+    <string name="app_name">JobStudy</string>
     <string name="search">Search</string>
     <string name="night_mode">Night Mode</string>
+    <string name="antonyms">Antonyms</string>
+    <string name="synonyms">Synonyms</string>
+    <string name="one_word_substitution">One Word Substitution</string>
+    <string name="idioms_and_phrases">Idioms and Phrases</string>
+    <string name="vocabulary">Vocabulary</string>
+    <string name="prepositions">Prepositions</string>
+    <string name="home">Home</string>
+    <string name="favourites">Favourites</string>
+    <string name="meaning">Meaning</string>
+    <string name="settings">Settings</string>
+    <string name="usage">Usage</string>
+    <string name="word_preposition">%1$s %2$s</string>
+    <string name="word_preposition_usage">%1$s %2$s %3$s</string>
 </resources>
